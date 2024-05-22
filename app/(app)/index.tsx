@@ -1,4 +1,4 @@
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 import { useState } from 'react';
 import { useSession } from '../ctx';
@@ -15,24 +15,13 @@ export default function Index() {
         }}>
         Sign Out
       </Text>
-      <Searchbar placeholder='Search' onChangeText={setSearchQuery} value = {searchQuery}/>
+      <Searchbar style = {styles.search} onChangeText={setSearchQuery} value = {searchQuery}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  search: {
+    width: "80%",
+  }
 });
